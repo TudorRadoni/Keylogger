@@ -8,7 +8,7 @@ from Dictionaries.upper import UpperDict
 
 
 class Key:
-    def __init__(self, buff):        
+    def __init__(self, buff):
         # test if line is a key press
         if buff[0] == '#' or buff[0] == '\n':
             self.isValid = False
@@ -106,6 +106,4 @@ print(outString)
 filePath = "C:\My Stuff\Projects\C++\Keylogger\Log Decoder\Logs\\example.dec"
 with open(filePath, 'w') as f:
     f.write(outString)
-
-# TODO: Improve path handling
-# TODO: Implement isNumeric function
+    
