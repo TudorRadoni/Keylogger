@@ -1,5 +1,7 @@
 # Keylogger
 
+![Keylogger Logo](docs/KeyloggerLogo.jpg)
+
 Well, it logs your keystrokes. It uses raw input.
 
 ## Known issues
