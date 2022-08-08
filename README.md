@@ -1,6 +1,6 @@
 # Keylogger
 
-![Keylogger Logo](docs/KeyloggerLogo.jpg)
+![Keylogger Logo](docs/KeyloggerLogo.png)
 
 Well, it logs your keystrokes. It uses raw input.
 
