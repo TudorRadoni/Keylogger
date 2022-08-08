@@ -63,23 +63,23 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 //
 //  FUNCTION: OpenFile() {
 // 
-//  PURPOSE: Opens the log file.
+//  PURPOSE: Opens the log file
 //
 BOOL OpenFile()
 {
-	// Close the file if already open.
+	// Close the file if already open
 	if (hFile != INVALID_HANDLE_VALUE) {
 		CloseHandle(hFile);
 	}
 
-	// Get current user name.
+	// Get current user name
 	TCHAR userName[UNLEN + 1];
 	DWORD userNameSize = UNLEN + 1;
 	GetUserName(userName, &userNameSize);
 
 	TCHAR fileName[MAX_PATH];
 
-	// Build the file path.
+	// Build the file path
 	const TCHAR* pathL = TEXT("C:/Users/");
 	const TCHAR* pathR = TEXT("/Desktop/log.log");
 	_sntprintf_s(fileName, MAX_PATH, _T("%s%s%s"), pathL, userName, pathR);
@@ -90,13 +90,37 @@ BOOL OpenFile()
 	}
 
 	SetFilePointer(hFile, 0, NULL, FILE_END);
+
+	// Get date and time
+	const unsigned int headerBufferSize = 108 + UNLEN; // 111 is length of the formatted string
+	char headerBuffer[headerBufferSize];
+	SYSTEMTIME st, lt;
+
+	GetSystemTime(&st);
+	GetLocalTime(&lt);
+
+	sprintf_s(headerBuffer, headerBufferSize,
+		"# Started logging %ls's computer on %02d/%02d/%d.\n# The system time is: %02d:%02d\n#  The local time is: %02d:%02d\n\n",
+		userName,
+		st.wDay,
+		st.wMonth,
+		st.wYear,
+		st.wHour,
+		st.wMinute,
+		lt.wHour,
+		lt.wMinute
+	);
+
+	DWORD len = (DWORD)strnlen_s(headerBuffer, headerBufferSize);
+	WriteFile(hFile, (void*)headerBuffer, len, NULL, NULL);
+
 	return TRUE;
 }
 
 //
 //	FUNCTION: CloseFile()
 //
-//	PURPOSE: Closes the log file.
+//	PURPOSE: Closes the log file
 //
 void CloseFile()
 {
@@ -109,7 +133,7 @@ void CloseFile()
 //
 //  FUNCTION: MyRegisterClass()
 //
-//  PURPOSE: Registers the window class.
+//  PURPOSE: Registers the window class
 //
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
