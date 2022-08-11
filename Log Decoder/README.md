@@ -5,10 +5,12 @@ It print the text to the console and saves it to a file named `output.txt`, whic
 
 ## Usage
 
-To use the script, you need to have python installed.
+To use the script, you need to have Python installed.
+
+Use `-h` or `--help` to see the available options.
 
 ```bash
-$ python log2text logfile.log
+$ python log2text.py logfile.log
 Here is the interpreted log.
 Output written to <current_path>/output.txt
 ```
