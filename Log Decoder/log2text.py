@@ -1,5 +1,8 @@
 # Python script to translate logs from the Keylogger
-# into beautifully formatted text. ⌨️
+# into human-readable text. ⌨️
+
+import sys
+import os
 
 from dataclasses import dataclass
 
@@ -45,10 +48,24 @@ class Key:
 
 
 # Read file
-file = open(
-    "C:\My Stuff\Projects\C++\Keylogger\Log Decoder\Logs\\example.log", "r")
-Lines = file.readlines()
-file.close()
+if (len(sys.argv) != 2):
+    print("Usage: log2text.py <logfile>")
+    sys.exit(1)
+if (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
+    print("Usage: log2text.py <logfile>")
+    sys.exit(0)
+if (not sys.argv[1].endswith('.log')):
+    print("File is not a log file")
+    sys.exit(1)
+if (not os.path.isfile(sys.argv[1])):
+    print("File not found")
+    sys.exit(1)
+if (not os.access(sys.argv[1], os.R_OK)):
+    print("File not readable")
+    sys.exit(1)
+    
+with open(sys.argv[1], 'r') as f:
+    Lines = f.readlines()
 
 # Initialize flags
 shift = False
@@ -99,11 +116,12 @@ for line in Lines:
         buff = ''
 
     outString += buff
-
 print(outString)
 
 # Write to file
-filePath = "C:\My Stuff\Projects\C++\Keylogger\Log Decoder\Logs\\example.dec"
+cwd = os.getcwd()
+filePath = cwd + "\\output.txt"
 with open(filePath, 'w') as f:
     f.write(outString)
-    
+
+print("Output written to " + filePath)
