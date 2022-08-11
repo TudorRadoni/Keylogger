@@ -1,0 +1,42 @@
+# This is an example log.
+#
+# Comments start with a hashtag (#)
+# Both comments and empty lines are ignored.
+#
+# The log format is:
+#   <MakeCode> <Flags> <Reserved> <VKey> <Message> <ExtraInformation>
+
+# Started logging example's computer on dd/mm/yyyy.
+# The system time is: hh:mm
+#  The local time is: hh:mm
+
+2a 0 0 10 100 0
+23 0 0 48 100 0
+23 1 0 48 101 0
+2a 1 0 10 101 0
+12 0 0 45 100 0
+12 1 0 45 101 0
+26 0 0 4c 100 0
+26 1 0 4c 101 0
+26 0 0 4c 100 0
+26 1 0 4c 101 0
+18 0 0 4f 100 0
+18 1 0 4f 101 0
+33 0 0 bc 100 0
+33 1 0 bc 101 0
+39 0 0 20 100 0
+39 1 0 20 101 0
+11 0 0 57 100 0
+11 1 0 57 101 0
+18 0 0 4f 100 0
+18 1 0 4f 101 0
+13 0 0 52 100 0
+13 1 0 52 101 0
+26 0 0 4c 100 0
+26 1 0 4c 101 0
+20 0 0 44 100 0
+20 1 0 44 101 0
+2a 0 0 10 100 0
+2 0 0 31 100 0
+2 1 0 31 101 0
+2a 1 0 10 101 0
