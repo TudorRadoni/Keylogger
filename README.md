@@ -8,7 +8,7 @@ Well, it logs your keystrokes. It uses raw input.
 
 ### Keylogger
 
-- Date could not be real or valid, so validity should be ensured
+- Date might not be real or valid, so validity should be ensured
 - Weird warning ocurrs before build when using WriteFile(). After build, it goes away
 
 ### Interpreter
