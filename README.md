@@ -13,7 +13,6 @@ Well, it logs your keystrokes. It uses raw input.
 
 ### Interpreter
 
-- Path handling is pretty much non-existent
 - Backspaces are not treated well
 - Some sort of isNumeric() function needs implementation
 - Shortcuts need a bit of work
