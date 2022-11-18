@@ -2,7 +2,7 @@
 
 ![Keylogger Logo](docs/KeyloggerLogo.png)
 
-Well, it logs your keystrokes. It uses raw input.
+_Documentation coming soon!_
 
 ## Known issues
 
@@ -17,3 +17,7 @@ Well, it logs your keystrokes. It uses raw input.
 - Backspaces are not treated well
 - Some sort of isNumeric() function needs implementation
 - Shortcuts need a bit of work
+
+## License
+
+This project is licensed under the terms of the GPL-3.0 license. See the [LICENSE](LICENSE) file.
