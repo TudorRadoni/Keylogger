@@ -9,7 +9,7 @@ _Documentation coming soon!_
 ### Keylogger
 
 - Date might not be real or valid, so validity should be ensured
-- Weird warning ocurrs before build when using WriteFile(). After build, it goes away
+- Weird warning ocurrs before build when using WriteFile(). After build, it goes away (most probably because of null memory space)
 
 ### Interpreter
 
